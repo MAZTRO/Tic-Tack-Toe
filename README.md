@@ -6,6 +6,6 @@ We use the amazing Java programming language for this challenge.
 
 First of all you need the JDK from java SE and to run with:
 ```sh
-$ java -jar /dist/tiktaktoe.jar
+$ java -jar jar_no_sound/Hello_world.jar
 ```
 # Have fun!
