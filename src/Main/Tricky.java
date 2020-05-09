@@ -320,6 +320,7 @@ public class Tricky extends javax.swing.JFrame{
             boolean active = true;
             clean_grid(true);
             clean_array();
+            clean_grid(active);
             enable_grid(active);
             turn_player();
             Btn_restart.setEnabled(true);
