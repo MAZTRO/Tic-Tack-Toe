@@ -318,6 +318,8 @@ public class Tricky extends javax.swing.JFrame{
             display_P2.setText(new_player_2.getName());
         
             boolean active = true;
+            clean_grid(true);
+            clean_array();
             enable_grid(active);
             turn_player();
             Btn_restart.setEnabled(true);
@@ -427,39 +429,39 @@ public class Tricky extends javax.swing.JFrame{
     public void clean_grid (boolean active){
         grid_00.setEnabled(active);
         grid_00.setIcon(null);
-        grid_00.setBackground(Color.white);
+        grid_00.setBackground(new Color(220, 220, 220));
         
         grid_01.setEnabled(active);
         grid_01.setIcon(null);
-        grid_01.setBackground(Color.white);
+        grid_01.setBackground(new Color(220, 220, 220));
         
         grid_02.setEnabled(active);
         grid_02.setIcon(null);
-        grid_02.setBackground(Color.white);
+        grid_02.setBackground(new Color(220, 220, 220));
         
         grid_10.setEnabled(active);
         grid_10.setIcon(null);
-        grid_10.setBackground(Color.white);
+        grid_10.setBackground(new Color(220, 220, 220));
         
         grid_11.setEnabled(active);
         grid_11.setIcon(null);
-        grid_11.setBackground(Color.white);
+        grid_11.setBackground(new Color(220, 220, 220));
         
         grid_12.setEnabled(active);
         grid_12.setIcon(null);
-        grid_12.setBackground(Color.white);
+        grid_12.setBackground(new Color(220, 220, 220));
         
         grid_20.setEnabled(active);
         grid_20.setIcon(null);
-        grid_20.setBackground(Color.white);
+        grid_20.setBackground(new Color(220, 220, 220));
         
         grid_21.setEnabled(active);
         grid_21.setIcon(null);
-        grid_21.setBackground(Color.white);
+        grid_21.setBackground(new Color(220, 220, 220));
         
         grid_22.setEnabled(active);
         grid_22.setIcon(null);
-        grid_22.setBackground(Color.white);
+        grid_22.setBackground(new Color(220, 220, 220));
     }
     
     
@@ -630,7 +632,7 @@ public class Tricky extends javax.swing.JFrame{
             display_text.setText("The winner is: " + name_winner);
             enable_grid(false);
         }
-        if (is_full()) {
+        else if (is_full()) {
             JOptionPane.showMessageDialog(null, "It's a draw!\nYou need to restart");
         }
     }
