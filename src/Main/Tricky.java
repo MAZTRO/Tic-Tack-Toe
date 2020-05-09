@@ -74,7 +74,7 @@ public class Tricky extends javax.swing.JFrame{
         display_turn1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(220, 220, 220));
-        setLayout(null);
+        getContentPane().setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(50, 50, 50));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 3, 0, new java.awt.Color(240, 240, 240)));
@@ -82,17 +82,22 @@ public class Tricky extends javax.swing.JFrame{
         jPanel2.setMinimumSize(new java.awt.Dimension(900, 100));
         jPanel2.setLayout(null);
 
-        Btn_bot.setBackground(new java.awt.Color(255, 231, 231));
+        Btn_bot.setBackground(new java.awt.Color(255, 234, 222));
         Btn_bot.setForeground(new java.awt.Color(50, 50, 50));
         Btn_bot.setText("Bot");
         Btn_bot.setToolTipText("Play with bots");
         Btn_bot.setBorder(null);
         Btn_bot.setMaximumSize(new java.awt.Dimension(60, 32));
         Btn_bot.setMinimumSize(new java.awt.Dimension(60, 32));
+        Btn_bot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_botActionPerformed(evt);
+            }
+        });
         jPanel2.add(Btn_bot);
         Btn_bot.setBounds(150, 15, 150, 35);
 
-        Btn_mult.setBackground(new java.awt.Color(255, 231, 231));
+        Btn_mult.setBackground(new java.awt.Color(255, 234, 222));
         Btn_mult.setForeground(new java.awt.Color(50, 50, 50));
         Btn_mult.setText("Multiplayer");
         Btn_mult.setToolTipText("Play with other peer");
@@ -106,7 +111,7 @@ public class Tricky extends javax.swing.JFrame{
         jPanel2.add(jLabel1);
         jLabel1.setBounds(410, 2, 60, 60);
 
-        add(jPanel2);
+        getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 0, 900, 65);
 
         jPanel4.setBackground(new java.awt.Color(50, 50, 50));
@@ -114,7 +119,7 @@ public class Tricky extends javax.swing.JFrame{
         jPanel4.setPreferredSize(new java.awt.Dimension(900, 60));
         jPanel4.setLayout(null);
 
-        Btn_new.setBackground(new java.awt.Color(255, 231, 231));
+        Btn_new.setBackground(new java.awt.Color(255, 234, 222));
         Btn_new.setForeground(new java.awt.Color(50, 50, 50));
         Btn_new.setText("New game");
         Btn_new.setBorder(null);
@@ -126,7 +131,7 @@ public class Tricky extends javax.swing.JFrame{
         jPanel4.add(Btn_new);
         Btn_new.setBounds(290, 10, 150, 35);
 
-        Btn_restart.setBackground(new java.awt.Color(255, 231, 231));
+        Btn_restart.setBackground(new java.awt.Color(255, 234, 222));
         Btn_restart.setForeground(new java.awt.Color(50, 50, 50));
         Btn_restart.setText("Restart");
         Btn_restart.setBorder(null);
@@ -138,9 +143,11 @@ public class Tricky extends javax.swing.JFrame{
         jPanel4.add(Btn_restart);
         Btn_restart.setBounds(470, 10, 150, 35);
 
-        add(jPanel4);
+        getContentPane().add(jPanel4);
         jPanel4.setBounds(0, 440, 900, 65);
 
+        grid_01.setBackground(new java.awt.Color(220, 220, 220));
+        grid_01.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(219, 204, 204)));
         grid_01.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Main/O.png"))); // NOI18N
         grid_01.setEnabled(false);
         grid_01.addActionListener(new java.awt.event.ActionListener() {
@@ -148,117 +155,133 @@ public class Tricky extends javax.swing.JFrame{
                 grid_01ActionPerformed(evt);
             }
         });
-        add(grid_01);
+        getContentPane().add(grid_01);
         grid_01.setBounds(400, 100, 110, 90);
 
+        grid_00.setBackground(new java.awt.Color(220, 220, 220));
+        grid_00.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(219, 204, 204)));
         grid_00.setEnabled(false);
         grid_00.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 grid_00ActionPerformed(evt);
             }
         });
-        add(grid_00);
+        getContentPane().add(grid_00);
         grid_00.setBounds(290, 100, 110, 90);
 
+        grid_02.setBackground(new java.awt.Color(220, 220, 220));
+        grid_02.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(219, 204, 204)));
         grid_02.setEnabled(false);
         grid_02.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 grid_02ActionPerformed(evt);
             }
         });
-        add(grid_02);
+        getContentPane().add(grid_02);
         grid_02.setBounds(510, 100, 110, 90);
 
+        grid_11.setBackground(new java.awt.Color(220, 220, 220));
+        grid_11.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(219, 204, 204)));
         grid_11.setEnabled(false);
         grid_11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 grid_11ActionPerformed(evt);
             }
         });
-        add(grid_11);
+        getContentPane().add(grid_11);
         grid_11.setBounds(400, 190, 110, 90);
 
+        grid_10.setBackground(new java.awt.Color(220, 220, 220));
+        grid_10.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(219, 204, 204)));
         grid_10.setEnabled(false);
         grid_10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 grid_10ActionPerformed(evt);
             }
         });
-        add(grid_10);
+        getContentPane().add(grid_10);
         grid_10.setBounds(290, 190, 110, 90);
 
+        grid_12.setBackground(new java.awt.Color(220, 220, 220));
+        grid_12.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(219, 204, 204)));
         grid_12.setEnabled(false);
         grid_12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 grid_12ActionPerformed(evt);
             }
         });
-        add(grid_12);
+        getContentPane().add(grid_12);
         grid_12.setBounds(510, 190, 110, 90);
 
+        grid_21.setBackground(new java.awt.Color(220, 220, 220));
+        grid_21.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(219, 204, 204)));
         grid_21.setEnabled(false);
         grid_21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 grid_21ActionPerformed(evt);
             }
         });
-        add(grid_21);
+        getContentPane().add(grid_21);
         grid_21.setBounds(400, 280, 110, 90);
 
+        grid_20.setBackground(new java.awt.Color(220, 220, 220));
+        grid_20.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(219, 204, 204)));
         grid_20.setEnabled(false);
         grid_20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 grid_20ActionPerformed(evt);
             }
         });
-        add(grid_20);
+        getContentPane().add(grid_20);
         grid_20.setBounds(290, 280, 110, 90);
 
+        grid_22.setBackground(new java.awt.Color(220, 220, 220));
+        grid_22.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(219, 204, 204)));
         grid_22.setEnabled(false);
         grid_22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 grid_22ActionPerformed(evt);
             }
         });
-        add(grid_22);
+        getContentPane().add(grid_22);
         grid_22.setBounds(510, 280, 110, 90);
 
         display_text.setBackground(new java.awt.Color(227, 227, 227));
         display_text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         display_text.setText("Next player");
         display_text.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add(display_text);
+        getContentPane().add(display_text);
         display_text.setBounds(290, 400, 330, 30);
 
         jLabel3.setForeground(new java.awt.Color(100, 100, 100));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Player 2:");
-        add(jLabel3);
+        getContentPane().add(jLabel3);
         jLabel3.setBounds(660, 220, 190, 30);
 
         jLabel4.setForeground(new java.awt.Color(100, 100, 100));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Player 1:");
-        add(jLabel4);
+        getContentPane().add(jLabel4);
         jLabel4.setBounds(50, 220, 180, 30);
 
         display_P1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         display_P1.setText(" ");
         display_P1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(50, 50, 50)));
-        add(display_P1);
+        getContentPane().add(display_P1);
         display_P1.setBounds(50, 190, 180, 30);
 
         display_P2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         display_P2.setText(" ");
         display_P2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(50, 50, 50)));
-        add(display_P2);
+        getContentPane().add(display_P2);
         display_P2.setBounds(660, 190, 190, 30);
 
         display_turn1.setBackground(new java.awt.Color(227, 227, 227));
         display_turn1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         display_turn1.setText("Turn");
         display_turn1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        add(display_turn1);
+        getContentPane().add(display_turn1);
         display_turn1.setBounds(290, 380, 330, 30);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -368,6 +391,11 @@ public class Tricky extends javax.swing.JFrame{
         Arrays.fill(matrix[2], 0);
         print_array();
     }//GEN-LAST:event_Btn_restartActionPerformed
+
+    private void Btn_botActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_botActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Coming soon!!!");
+    }//GEN-LAST:event_Btn_botActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
