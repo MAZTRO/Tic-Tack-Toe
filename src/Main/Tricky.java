@@ -7,7 +7,10 @@ package Main;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,13 +18,17 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import sun.audio.AudioData;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+import sun.audio.ContinuousAudioDataStream;
 
 /**
  *
  * @author Jonatan
  */
 public class Tricky extends javax.swing.JFrame{
-    
+    String RUTE_SOUND = "audio/sounclick.wav";
     Player new_player_1 = new Player();
     Player new_player_2 = new Player();
     int turn = 1;
@@ -37,6 +44,7 @@ public class Tricky extends javax.swing.JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
         Btn_restart.setEnabled(false);
+        play("audio/ambient.wav");
     }
     
     
@@ -290,6 +298,7 @@ public class Tricky extends javax.swing.JFrame{
         func_btn(grid_02, 0, 2);
         print_array();
         logic_win();
+        
     }//GEN-LAST:event_grid_02ActionPerformed
 
     private void Btn_newActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_newActionPerformed
@@ -346,6 +355,7 @@ public class Tricky extends javax.swing.JFrame{
         func_btn(grid_10, 1, 0);
         print_array();
         logic_win();
+        
     }//GEN-LAST:event_grid_10ActionPerformed
 
     private void grid_11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grid_11ActionPerformed
@@ -488,6 +498,7 @@ public class Tricky extends javax.swing.JFrame{
     
     public void func_btn (JButton btn, int pos_a, int pos_b) {
         Image check = null;
+        play("");
         
         if (matrix[pos_a][pos_b] == 0) {
             if (turn == 1){
@@ -661,6 +672,28 @@ public class Tricky extends javax.swing.JFrame{
         }
         else {
             display_text.setText(new_player_2.getName());
+        }
+    }
+    
+    public void play(String path) {
+        InputStream music;
+        AudioData ambient;
+        try {
+            if (path.isEmpty())
+            {
+                music = new FileInputStream(new File(RUTE_SOUND));
+                AudioStream audio = new AudioStream(music);
+                AudioPlayer.player.start(audio);
+            }
+            else{
+                
+                ambient = new AudioStream(new FileInputStream(path)).getData();
+                ContinuousAudioDataStream sound = new ContinuousAudioDataStream(ambient);
+                AudioPlayer.player.start(sound);
+            }
+            
+        } catch (Exception e) {
+            System.out.println("Error to play sound");
         }
     }
 }
